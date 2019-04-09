@@ -1,6 +1,21 @@
 ---
 # defaults file for ansible-digital-rebar
+# https://github.com/digitalrebar/provision/archive/v3.13.4.tar.gz
+digital_rebar_install_dir: /usr/local/bin
 digital_rebar_binary: "{{ digital_rebar_install_dir }}/dr-provision"
+digital_rebar_version: v3.13.4
+
+digital_rebar_install_from_source: true
+
+digital_rebar_dl_url: https://github.com/digitalrebar/provision/releases/download
+digital_rebar_package: dr-provision.zip
+digital_rebar_dl: "{{ digital_rebar_dl_url }}/{{ digital_rebar_version }}/{{ digital_rebar_package }}"
+digital_rebar_sha256: ad5d142b69ee061cede833871a1f266d81a8ef80d4a0b6af21cbfcabfb378b4c
+
+digital_rebar_source_url: https://github.com/digitalrebar/provision/archive/
+digital_rebar_source_dl: "{{ digital_rebar_source_url }}/{{ digital_rebar_version }}.tar.gz"
+digital_rebar_source_sha256: 386ec876eef22111a9f9d876c519853fa7f6cf1689b593a1b333296d6f384507
+
 digital_rebar_config: []
   # sections:
   #   bootenvs:
@@ -2107,10 +2122,3 @@ digital_rebar_config: []
   #       Meta: {}
   #       ReadOnly: false
   #       Validated: false
-
-digital_rebar_dl_url: https://github.com/digitalrebar/provision/releases/download
-digital_rebar_dl: "{{ digital_rebar_dl_url }}/{{ digital_rebar_version }}/{{ digital_rebar_package }}"
-digital_rebar_install_dir: /usr/local/bin
-digital_rebar_package: dr-provision.zip
-digital_rebar_sha256: fe338b28ce3b1df4af0b5426bfc0cb395601fff10ca3c6b1886e207a2282be4a
-digital_rebar_version: stable
