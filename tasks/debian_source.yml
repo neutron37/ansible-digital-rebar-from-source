@@ -1,0 +1,19 @@
+---
+- name: debian | Installing Source Pre-Reqs
+  apt:
+    name: ['git']
+    state: present
+  become: true
+
+- name: install | Downloading updated golang
+  get_url:
+    url: "{{ digital_rebar_golang_dl }}"
+    dest: "/tmp/{{ digital_rebar_golang_file }}"
+    checksum: "sha256:{{ digital_rebar_golang_sha256 }}"
+
+- name: install | Extracting golang
+  unarchive:
+    src: "/tmp/{{ digital_rebar_golang_file }}"
+    dest: /usr/local
+    remote_src: true
+  register: _golang_extracted

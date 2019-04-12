@@ -7,14 +7,19 @@ digital_rebar_version: v3.13.4
 
 digital_rebar_install_from_source: true
 
+digital_rebar_source_url: https://github.com/digitalrebar/provision/archive/
+digital_rebar_source_dl: "{{ digital_rebar_source_url }}/{{ digital_rebar_version }}.tar.gz"
+digital_rebar_source_sha256: 386ec876eef22111a9f9d876c519853fa7f6cf1689b593a1b333296d6f384507
+
+digital_rebar_golang_url: https://dl.google.com/go/
+digital_rebar_golang_file: go1.12.3.linux-armv6l.tar.gz
+digital_rebar_golang_dl: "{{ digital_rebar_golang_url }}{{ digital_rebar_golang_file }}"
+digital_rebar_golang_sha256: efce59fac5ebc7302263ca1093fe2c3252c1b936f5b1ae08afc328eea0403c79
+
 digital_rebar_dl_url: https://github.com/digitalrebar/provision/releases/download
 digital_rebar_package: dr-provision.zip
 digital_rebar_dl: "{{ digital_rebar_dl_url }}/{{ digital_rebar_version }}/{{ digital_rebar_package }}"
 digital_rebar_sha256: ad5d142b69ee061cede833871a1f266d81a8ef80d4a0b6af21cbfcabfb378b4c
-
-digital_rebar_source_url: https://github.com/digitalrebar/provision/archive/
-digital_rebar_source_dl: "{{ digital_rebar_source_url }}/{{ digital_rebar_version }}.tar.gz"
-digital_rebar_source_sha256: 386ec876eef22111a9f9d876c519853fa7f6cf1689b593a1b333296d6f384507
 
 digital_rebar_config: []
   # sections:

@@ -1,7 +1,7 @@
 galaxy_info:
-  author: your name
-  description: your description
-  company: your company (optional)
+  author: Neutron37
+  description: Install Digital Rebar from source, cross-platform.
+  company: https://indieops.berlin
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -14,9 +14,9 @@ galaxy_info:
   # - GPLv3
   # - Apache
   # - CC-BY
-  license: license (GPLv2, CC-BY, etc)
+  license: BSD
 
-  min_ansible_version: 1.2
+  min_ansible_version: 2.7.9
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
@@ -33,7 +33,7 @@ galaxy_info:
   # platforms is a list of platforms, and each platform has a name and a list of versions.
   #
   # platforms:
-  # - name: Fedora
+  # - name: Debian
   #   versions:
   #   - all
   #   - 25
