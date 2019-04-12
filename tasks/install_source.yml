@@ -1,26 +1,12 @@
 ---
+- name: Installing source pre-requisite, go
+  include_role:
+    name: neutron37.ansible-golang
+
 - include_tasks: debian_source.yml
   when: ansible_os_family == "Debian"
 
-- name: install | Checking If Digital Rebar Is Already Installed
-  stat:
-    path: "{{ digital_rebar_binary }}"
-  register: _digital_rebar_install_check
 
-- name: install | Downloading Digital Rebar Source
-  get_url:
-    url: "{{ digital_rebar_source_dl }}"
-    dest: "/tmp/{{ digital_rebar_package }}"
-    checksum: "sha256:{{ digital_rebar_source_sha256 }}"
-  when: not _digital_rebar_install_check['stat']['exists']
-
-- name: install | Extracting Digital Rebar Source
-  unarchive:
-    src: "/tmp/{{ digital_rebar_package }}"
-    dest: /tmp
-    remote_src: true
-  register: _digital_rebar_extracted
-  when: not _digital_rebar_install_check['stat']['exists']
 
 # - name: build | Build Digital Rebar Packages
 
