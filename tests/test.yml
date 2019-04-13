@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-digital-rebar
+    - ansible-digital-rebar-multiplatform

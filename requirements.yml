@@ -1,3 +1,0 @@
-- name: neutron37.ansible-golang
-  src: https://github.com/neutron37/ansible-golang
-  version: master

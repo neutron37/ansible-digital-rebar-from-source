@@ -1,13 +1,8 @@
 galaxy_info:
   author: Neutron37
-  description: Install Digital Rebar from source, cross-platform.
+  description: Install Digital Rebar cross-platform.
   company: https://indieops.berlin
-
-  # If the issue tracker for your role is not on github, uncomment the
-  # next line and provide a value
-  # issue_tracker_url: http://example.com/issue/tracker
   license: BSD
-
   min_ansible_version: 2.7.9
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.

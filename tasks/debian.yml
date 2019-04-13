@@ -1,6 +1,0 @@
----
-- name: debian | Installing Pre-Reqs
-  apt:
-    name: ['bsdtar', 'p7zip-full']
-    state: present
-  become: true

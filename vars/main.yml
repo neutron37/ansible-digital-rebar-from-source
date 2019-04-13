@@ -1,2 +1,4 @@
 ---
-# vars file for ansible-digital-rebar
+# Derived from configuration variables.
+digital_rebar_binary: "{{ digital_rebar_install_dir }}/dr-provision"
+digital_rebar_installer_url: https://raw.githubusercontent.com/digitalrebar/provision/{{ digital_rebar_version }}/tools/install.sh
