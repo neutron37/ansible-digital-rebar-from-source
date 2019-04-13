@@ -3,12 +3,16 @@
 # https://github.com/digitalrebar/provision/archive/v3.13.4.tar.gz
 digital_rebar_install_dir: /usr/local/bin
 digital_rebar_binary: "{{ digital_rebar_install_dir }}/dr-provision"
-digital_rebar_version: v3.13.4
+digital_rebar_version: 3.13.4
 
 digital_rebar_install_from_source: true
 
+# Space separated list of target arch:os pairs as listed in tools/build.sh:
+#   arm:7:linux amd64:linux amd64:darwin amd64:windows arm64:linux
+digital_rebar_source_arch_os: "arm:7:linux"
 digital_rebar_source_url: https://github.com/digitalrebar/provision/archive/
-digital_rebar_source_dl: "{{ digital_rebar_source_url }}/{{ digital_rebar_version }}.tar.gz"
+digital_rebar_source_dl: "{{ digital_rebar_source_url }}/v{{ digital_rebar_version }}.tar.gz"
+digital_rebar_source_dir: "/tmp/provision-{{ digital_rebar_version }}"
 digital_rebar_source_sha256: 386ec876eef22111a9f9d876c519853fa7f6cf1689b593a1b333296d6f384507
 
 # Variables for binary install... amd64 only.
@@ -17,7 +21,8 @@ digital_rebar_package: dr-provision.zip
 digital_rebar_dl: "{{ digital_rebar_dl_url }}/{{ digital_rebar_version }}/{{ digital_rebar_package }}"
 digital_rebar_sha256: ad5d142b69ee061cede833871a1f266d81a8ef80d4a0b6af21cbfcabfb378b4c
 
-# Variables for included role: neutron37.golang
+
+# Variables for included role: neutron37.ansible-golang
 # See roles/contrib/neutron37.golang/defaults/main.yml
 golang_platform: linux
 golang_isa: armv6l
