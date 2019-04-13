@@ -1,4 +1,4 @@
-# ansible-digital-rebar
+# ansible-digital-rebar-multiplatform
 
 An [Ansible](https://www.ansible.com) role to install/configure [Digital Rebar](http://rebar.digital/)
 
