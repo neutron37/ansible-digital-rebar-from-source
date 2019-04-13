@@ -42,9 +42,8 @@ Tom Stec
 
 - tom [at] satori.us
 
-## Credits from mrlesmithjr/ansible-digital-rebar
-
-Larry Smith Jr.
+Forked from mrlesmithjr/ansible-digital-rebar
+Original author: Larry Smith Jr.
 
 -   [EverythingShouldBeVirtual](http://everythingshouldbevirtual.com)
 -   [@mrlesmithjr](https://www.twitter.com/mrlesmithjr)
