@@ -2,5 +2,4 @@
 # defaults file for ansible-digital-rebar
 # https://github.com/digitalrebar/provision/archive/v3.13.4.tar.gz
 digital_rebar_version: 3.13.4
-digital_rebar_install_dir: /usr/local/bin
 digital_rebar_installer_sha256: 9d0e150865b8b4db2d0aae2cb0686254e95b8a976e36de5604b8a3f9c95de3c7

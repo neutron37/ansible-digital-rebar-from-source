@@ -1,31 +1,10 @@
 ---
 # tasks file for ansible-digital-rebar-multiplatform
-- name: install | Checking If Digital Rebar Is Already Installed
+- name: main | Check if Digital Rebar is already installed
   stat:
     path: "{{ digital_rebar_binary }}"
   register: _digital_rebar_installed
 
-- name: install | Downloading Digital Rebar installer.
-  get_url:
-    url: "{{ digital_rebar_installer_url }}"
-    dest: "/usr/local/src/dr-install.sh"
-    checksum: "sha256:{{ digital_rebar_installer_sha256 }}"
-    mode: a+x
-
-- name: "install | Installing Digital Rebar"
-  command: "./dr-install.sh --version={{ digital_rebar_version }} install"
-  args:
-    chdir: "/usr/local/src"
-
-- name: service | Reloading SystemD
-  systemd:
-    daemon_reload: true
-    name: dr-provision
-  become: true
-
-- name: service | Starting And Ensuring dr-provision Starts on Boot
-  service:
-    name: dr-provision
-    enabled: true
-    state: started
-  become: true
+- name: main | Install Digital Rebar if not yet installed.
+  include_tasks: install.yml
+  when: not _digital_rebar_installed['stat']['exists']

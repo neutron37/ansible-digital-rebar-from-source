@@ -1,0 +1,32 @@
+---
+- name: installing debian | Installing Pre-Reqs.
+  apt:
+    name: ['bsdtar', 'p7zip-full']
+    state: present
+  become: true
+  when: ansible_os_family == "Debian"
+
+- name: install | Downloading Digital Rebar installer.
+  get_url:
+    url: "{{ digital_rebar_installer_url }}"
+    dest: "/usr/local/src/dr-install.sh"
+    checksum: "sha256:{{ digital_rebar_installer_sha256 }}"
+    mode: a+x
+
+- name: "install | Installing Digital Rebar"
+  command: "./dr-install.sh --version={{ digital_rebar_version }} install"
+  args:
+    chdir: "/usr/local/src"
+
+- name: install | Reloading SystemD
+  systemd:
+    daemon_reload: true
+    name: dr-provision
+  become: true
+
+- name: install | Starting And Ensuring dr-provision Starts on Boot
+  service:
+    name: dr-provision
+    enabled: true
+    state: started
+  become: true
