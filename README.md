@@ -2,7 +2,9 @@
 
 An [Ansible](https://www.ansible.com) role to install/configure [Digital Rebar](http://rebar.digital/)
 
-This role leverages the official install tool for Digital Rebar. It has been tested on raspbian/stretch Debian.
+This role leverages the official install tool for Digital Rebar.
+
+It has been tested *only* on raspbian/stretch Debian, but should likely work for any Debian or Ubuntu.
 
 ## Requirements
 
