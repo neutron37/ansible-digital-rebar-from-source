@@ -1,7 +1,7 @@
 ---
 - name: installing debian | Installing Pre-Reqs.
   apt:
-    name: ['bsdtar', 'p7zip-full']
+    name: ['bsdtar', 'p7zip-full', 'jq']
     state: present
   become: true
   when: ansible_os_family == "Debian"
